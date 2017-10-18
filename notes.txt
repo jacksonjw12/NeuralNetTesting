@@ -1,0 +1,24 @@
+Backpropogation
+
+	change weights between output and hidden
+	
+		output sum margin of error = target - calculated
+
+		Delta output sum  = S'(sum) * output sum margin of error
+		where sum = sum of inputs to output layer multiplied by weights
+		sum = product of hidden layer results and weights between hidden layer and output layer
+
+		change in weights = delta weights
+
+		delta weights = delta output sum / hidden layer outputs
+		apply delta weights to weights
+
+	change weights between hidden and input
+
+		
+
+		Delta hidden sum = delta output sum / hidden-to-outer weights * S'(hidden sum)	
+		delta output sum taken from before
+		hidden sum = product of input and weights between hidden and input
+
+		delta weights = delta hidden sum / input data
