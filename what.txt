@@ -1,0 +1,61 @@
+Network ( arr )
+	arr is an array of ints(>=1) where arr.length = num layers, arr[i] means in layer i there are arr[i] neurons
+	learning rate
+		small val that lets network learn, larger vals too jumpy, smaller get stuck in local minima
+	layers
+		all the layers in the network
+	setInputs
+		set outputs for first layer (input layer)
+	forward
+		forward propogate(inputs for network must already be set)
+	backward
+		backward propogate ( forward propogate must be ran first with the input data)
+	update
+		update weights with weight deltas, then reset deltas
+	errorFunc
+		function that determines how much error the output nodes have from the target
+	train
+		call setInput, forward, backward, update
+	trainBatch
+		call setInput, forward backward, for whole batch
+		then update
+
+Layer
+	neurons
+		array of all neurons in layer
+	prevLayer
+		network.layers[thislayer-1] (undefined for first layer)
+	setOutputs
+		set outputs of all neurons in this layer
+	getOutputs
+		return outputs for all neurons in this layer
+	forward
+		forward propogate all neurons in this layer, basically just calculate their output using the ouputs from previous layer
+	update
+		update deltas, then reset to 0
+
+Neuron
+	prevLayer
+		previous layer in the letwrok
+	output
+		output for this neuron, basically sigmoid (sum(prevLayer * weights) + bias)
+	error
+		error from the target set by the backpropogation function
+	weights
+		array of weights for connections to the previous layer
+	bias
+		neurons bias value
+	setOutput
+		this.output = output
+	forward
+		calculate output based on prev layers output
+	update
+		update weights based on deltas, then reset deltas
+
+Weight
+	weight
+		Math.random() + deltas from backprop
+	delta
+		temp delta val
+
+Sigmoid
